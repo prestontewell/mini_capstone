@@ -1,1 +1,1 @@
-json.message 'Bout to blow this shit up'
+json.message 'Bout to blow this #&%! up'
