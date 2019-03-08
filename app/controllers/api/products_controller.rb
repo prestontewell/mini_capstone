@@ -17,8 +17,14 @@ class Api::ProductsController < ApplicationController
       image_url: params[:image_url],
       description: params[:description]
       )
-    @product.save
-    render 'show.json.jbuilder'
+    if @product.save
+      # if user enters correct data save to db
+      render 'show.json.jbuilder'
+    else
+    #   # if user does not enter correct data do not save and inform user
+    # end
+      render 'errors.json.jbuilder'
+    end
   end
 
   def update
