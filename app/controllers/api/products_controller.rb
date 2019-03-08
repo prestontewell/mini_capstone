@@ -23,7 +23,7 @@ class Api::ProductsController < ApplicationController
     else
     #   # if user does not enter correct data do not save and inform user
     # end
-      render 'errors.json.jbuilder'
+      render 'errors.json.jbuilder' status: :unprocessible_entity
     end
   end
 
