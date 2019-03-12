@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   namespace :api do
     get '/suppliers' => 'suppliers#index'
     get '/suppliers/:id' => 'suppliers#show'
+    post '/suppliers' => 'suppliers#create'
   end
 end
