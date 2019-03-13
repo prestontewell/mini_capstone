@@ -6,12 +6,21 @@ class Api::ProductsController < ApplicationController
     else 
       @products = Product.all
     end
+
+    if params[:discount] == "true"
+      @products = @products.where("price < ?", 5)
+    end
+
+    if params[:sort] && params[:sort_order]
+      @products = @products.order(params[:sort] => params[:sort_order])
+    end
     render "index.json.jbuilder"
   end
 
+
+
   def show
-    product_id = params[:id]
-    @product = Product.find_by(id:product_id)
+    @product = Product.find(params[:id])
     render 'show.json.jbuilder'
   end
 

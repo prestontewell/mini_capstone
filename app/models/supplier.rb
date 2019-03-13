@@ -5,6 +5,8 @@ class Supplier < ApplicationRecord
   validates :phone, presence: true
   validates :email, presence: true, uniqueness: true
 
+  
+
 
 
   # def products
