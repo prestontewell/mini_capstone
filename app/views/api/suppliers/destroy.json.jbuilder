@@ -1,0 +1,1 @@
+json.message 'The supplier you selected has been deleted.'

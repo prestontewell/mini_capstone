@@ -16,8 +16,10 @@ class Api::SuppliersController < ApplicationController
       email: params[:email],
       phone: params[:phone]
       )
-    @supplier.save
+    if @supplier.save
     render 'show.json.jbuilder'
+    else
+      render 'errors.json.jbuilder', status: :unprocessible_entity
   end
 
   def update
@@ -28,4 +30,12 @@ class Api::SuppliersController < ApplicationController
     @supplier.save
     render 'show.json.jbuilder'
   end
+
+  def destroy
+    @supplier = Supplier.find(params[:id])
+    @supplier.destroy
+    render 'destroy.json.jbuilder'
+  end
+
+
 end
