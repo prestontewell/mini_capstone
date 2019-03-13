@@ -12,11 +12,12 @@ Rails.application.routes.draw do
     post '/products' => 'products#create'
     patch '/products/:id' => 'products#update'
     delete '/products/:id' => 'products#destroy'
-  end
 
-  namespace :api do
     get '/suppliers' => 'suppliers#index'
     get '/suppliers/:id' => 'suppliers#show'
     post '/suppliers' => 'suppliers#create'
+
+    post '/users' => 'users#create'
+
   end
 end

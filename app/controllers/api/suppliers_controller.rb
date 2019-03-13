@@ -12,9 +12,9 @@ class Api::SuppliersController < ApplicationController
 
   def create
     @supplier = Supplier.new(
-      name: "Q'Arl Q'Orsendell",
-      email: "qarl@waterdeep.net",
-      phone: "555-0443"
+      name: params[:name],
+      email: params[:email],
+      phone: params[:phone]
       )
     @supplier.save
     render 'show.json.jbuilder'
