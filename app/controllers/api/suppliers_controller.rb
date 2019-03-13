@@ -20,4 +20,12 @@ class Api::SuppliersController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  def update
+    @supplier = Supplier.find(params[:id])
+    @supplier.name = params[:name] || @supplier.name
+    @supplier.email = params[:email] || @supplier.email
+    @supplier.phone = params[:phone] || @supplier.phone
+    @supplier.save
+    render 'show.json.jbuilder'
+  end
 end

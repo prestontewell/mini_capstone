@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get '/suppliers' => 'suppliers#index'
     get '/suppliers/:id' => 'suppliers#show'
     post '/suppliers' => 'suppliers#create'
+    patch '/suppliers/:id' => 'suppliers#update'
 
     post '/users' => 'users#create'
 
