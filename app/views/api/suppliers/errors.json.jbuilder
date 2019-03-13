@@ -1,1 +1,1 @@
-json.errors @product.errors.full_messages
+json.errors @supplier.errors.full_messages
