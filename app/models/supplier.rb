@@ -5,11 +5,5 @@ class Supplier < ApplicationRecord
   validates :phone, presence: true
   validates :email, presence: true, uniqueness: true
 
-  
 
-
-
-  # def products
-  #   Product.where(supplier_id: id)
-  # end
 end
