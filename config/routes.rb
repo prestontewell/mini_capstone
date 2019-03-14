@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get 'images' => 'images#index'
     post 'images/' => 'images#create'
 
+    post 'orders/' => 'orders#create'
+
     post '/users' => 'users#create'
 
     post '/sessions' => 'sessions#create'
