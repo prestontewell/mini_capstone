@@ -1,6 +1,8 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    @orders = Order.all
+    @orders = current_user.orders
     render 'index.json.jbuilder'
   end
 
@@ -12,9 +14,6 @@ class Api::OrdersController < ApplicationController
     calculated_tax = calculated_subtotal * tax_rate
     calculated_total = calculated_tax + calculated_subtotal
     #subtotal = quantity * price
-
-
-
     @order = Order.new(
       user_id: current_user.id,  
       product_id: params[:product_id],

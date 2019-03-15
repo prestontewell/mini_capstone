@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  
+
   def index
     search_term = params[:search]
     if search_term
