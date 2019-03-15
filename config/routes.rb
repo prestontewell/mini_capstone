@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     post 'images/' => 'images#create'
 
     post 'orders/' => 'orders#create'
+    get 'orders/' => 'orders#index'
 
     post '/users' => 'users#create'
 
