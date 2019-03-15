@@ -1,1 +1,0 @@
-json.message "Your order has been completed."
