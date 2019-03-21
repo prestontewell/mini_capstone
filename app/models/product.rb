@@ -1,10 +1,11 @@
 class Product < ApplicationRecord
   belongs_to :supplier
+  
   has_many :images
-  has_many :orders
   has_many :category_products
   has_many :categories, through: :category_products
-  belongs_to :carted_product
+  has_many :carted_products
+  
 
   validates :name, :price, presence: true
   validates :name, uniqueness: true
